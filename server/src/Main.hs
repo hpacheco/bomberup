@@ -410,7 +410,7 @@ isHidden s = isPrefixOf "." s
 initServerState :: IO ServerState
 initServerState = do
     hPutStrLn stderr $ "opening database"
-    db <- openLocalStateFrom "state.db" emptyDB
+    db <- openLocalStateFrom "db/state.db" emptyDB
     myKey <- generateKey
     let cookieSettings = defaultCookieSettings { cookieXsrfSetting = Nothing }
         jwtSettings = defaultJWTSettings myKey
@@ -418,7 +418,7 @@ initServerState = do
     let filenames = List.filter (not . isHidden) $ List.map takeFileName files
     templates <- liftIO $ mapM parseTemplate filenames
     let tpls = Map.fromList $ zip filenames templates
-    return $ ServerState 6000 cookieSettings jwtSettings db tpls
+    return $ ServerState 3000 cookieSettings jwtSettings db tpls
 
 exitServer :: ServerState -> E.SomeException -> IO ()
 exitServer st e = do

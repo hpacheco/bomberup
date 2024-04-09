@@ -406,7 +406,7 @@ getApiGame query_flags toMsg =
                 Nothing
             }
 
-getApiMatch : (Maybe Int64) -> (DetailedResult (Http.Detailed.Error String)  (RawHtml)  -> msg) -> Cmd msg
+getApiMatch : (Maybe Int) -> (DetailedResult (Http.Detailed.Error String)  (RawHtml)  -> msg) -> Cmd msg
 getApiMatch query_id toMsg =
     let
         params =
