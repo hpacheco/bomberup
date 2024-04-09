@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "material-components-web-elm": "^9.1.0"
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <style>body { padding: 0; margin: 0; }</style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web-elm@9.1.0/dist/material-components-web-elm.min.css">
+  <link rel="stylesheet" href="/css/page.css">
+  <script src="https://unpkg.com/material-components-web-elm@9.1.0/dist/material-components-web-elm.min.js"></script>
+</head>
+
+<body>
+    <div id="game"></div>
+    
+    <script src="/elm/game.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+          main = Elm.Game.Main.init({
+            node: document.getElementById('game'),
+            flags: {{& flags}}
+          });
+        });
+    </script>
+    
+  </body>
+
+</html>

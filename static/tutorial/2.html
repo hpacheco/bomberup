@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+  <style>
+    html, head, body { padding: 0; margin: 0; line-height: 1.5; }
+    a { color: #1293D8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body style="background: var(--dark-theme-black);">
+
+<div class="theme-dark" style="width:100%; height:100%;">
+  <div style="border-top:4px solid #1293D8; min-width: 360px; font-family:'IBM Plex Sans',sans-serif; padding:0 2em 1em; margin:2em;">
+    <p style="border-top:1em"></p>
+    <h1 style="font-weight:normal">Moving in multiple directions</h1>
+    <p>Consider the board on the right, with both your bot and a power-up in a fixed position.</p>
+    <p>How can the bot pick up the power-up?</p>
+    <ul>
+        <li>We now have to give different move instructions to the bot... the simplest path is to move to the right, and then move down.</li>
+        <li>But how can the bot decide on where to move? For that we need to use the state, which us gives up-to-date information about the board and the players. In this example, we want to know the position of the bot. </li>
+        <li>Then we want to choose the bot's move depending on its position. In programming, this is done using an <code>if-then-else</code> statement. In this example, we can move to the right until the bot's column is smaller than 7, and keep moving down afterwards.</li>
+    </ul>
+    
+    <p>Try the code below!</p>
+    <p style="border-bottom:1em"></p>
+    
+  </div>
+</div>
+
+</body>
+</html>

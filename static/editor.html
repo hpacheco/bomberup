@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try out Elm: A delightful language with friendly error messages, great performance, small assets, and no runtime exceptions.">
+  <link rel="stylesheet" rel="preload" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Courier+Prime&display=swap">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+</head>
+
+<body>
+
+<main id="main"></main>
+<textarea id="original" style="display:none;"></textarea>
+<script src="/js/editor-codemirror.js"></script>
+<script src="/js/editor-custom-elements.js"></script>
+<script src="/elm/editor.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    var originalCode = document.getElementById('original').textContent;
+    main = Elm.Page.Editor.init({
+      node: document.getElementById('main'),
+      flags: { windowWidth: window.innerWidth }
+    });
+
+    main.ports.submitSource.subscribe(function(source) {
+      var editorNode = document.getElementById('editor');
+      var codeNode = document.getElementById('code');
+      codeNode.value = source;
+      editorNode.submit();
+    });
+    
+    main.ports.setUrl.subscribe(function(url) {
+      output = document.getElementById('output');
+      output.src = url;
+      output.style.display = "block";
+      problems = document.getElementById('problems');
+      if (problems != null) {
+          problems.style.display = "none"
+      }
+    });
+
+    window.addEventListener("message", gotErrors, false);
+
+    function gotErrors(event) {
+      if (event.data == "SUCCESS") {
+        main.ports.gotSuccess.send(null);
+      } else if (event.data == "CHAOS") {
+        main.ports.gotChaos.send(null);
+      } else if (event.data == {}) {
+        main.ports.gotErrors.send(null);
+      }
+      else {
+        var message = JSON.parse(event.data);
+        main.ports.gotErrors.send(message);
+        
+        problems = document.getElementById('problems');
+        if (problems != null) {
+            problems.style.display = "block"
+        }
+        output = document.getElementById('output');
+        if (output != null) {
+            output.style.display = "none"
+        }
+      }
+    }
+
+  });
+</script>
+
+</body>
+
+</html>
+

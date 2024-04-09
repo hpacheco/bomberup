@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" rel="preload" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Courier+Prime&display=swap">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+  <link rel="stylesheet" href="/css/page.css">
+</head>
+
+<body>
+
+<div class="theme-dark" style="margin: 30px">
+    <img style="margin:20px 20px 10px 20px" src="/graphics/compileChaos.gif">
+    <p class="mdc-typography" style="margin 0px 20px">Something went wrong with your program. Make sure that you haven't modified the imports and bot function declaration. Remember that your code must respect the following structure:</p>
+    <pre>
+    import Game.Bot exposing (..)
+
+    bot : State -> Move
+    bot state = ...
+    </pre>
+    <p class="mdc-typography" style="margin 0px 20px"> For reasons which you don't care about, also please do not declare any types with name <i>Msg</i> and any functions with names <i>update</i>, <i>subscriptions</i>, <i>main</i>, <i>setInput</i> or <i>getOutput</i>.</p>
+    <script>
+        window.parent.postMessage("CHAOS", "*");
+    </script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+  <style>
+    html, head, body { padding: 0; margin: 0; line-height: 1.5; }
+    a { color: #1293D8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+<body style="background: var(--dark-theme-black);">
+
+<div class="theme-dark" style="width:100%; height:100%;">
+  <div style="border-top:4px solid #1293D8; min-width: 360px; font-family:'IBM Plex Sans',sans-serif; padding:0 2em 1em; margin:2em;">
+    <p style="border-top:1em"></p>
+    <h1 style="font-weight:normal">Moving towards a goal</h1>
+    <p>Consider the board on the right, where your bot wants to move to a <code>target</code> position. Each time you refresh this page the bot and <code>target</code> positions will change.</p>
+    <p>How can the bot reach the target?</p>
+    <ul>
+        <li>We have four directions that we can consider: above, below, leftwards and rightwards.</li>
+        <li>The idea is that we will choose the move whose next position is closest to the <code>target</code>.</li>
+        <li>For determining how close a position \((x_1,y_1)\) is to another position \((x_2,y_2)\), we can remember school arithmetic and use the Euclidian distance: $$d = \sqrt{{|x_1-x_2|}^2 + {|y_1-y_2|}^2}$$</li>
+        <li>The function <code>distanceFrom</code> calculates how far a position is from the <code>target</code>. To discourage the bot from trying to move into walls, we set a very high distance value for walls.</li>
+        <li>Since we want to compare distances but select moves, we first compute the distances, and then compare them to select the closest move.</li>
+        <li>The <code>moveTowards</code> function, corresponding to this bot, is also available in the bot interface.</li>
+    </ul>
+    
+    <p>Try the code below!</p>
+    <p style="border-bottom:1em"></p>
+    
+  </div>
+</div>
+
+</body>
+</html>

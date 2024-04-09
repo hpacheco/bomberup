@@ -1,0 +1,18 @@
+{
+    "type": "package",
+    "name": "bartavelle/json-helpers",
+    "summary": "Helpers for Json encoding and decoding of sum types",
+    "license": "BSD-3-Clause",
+    "version": "2.0.2",
+    "exposed-modules": [
+        "Json.Helpers"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
+    "dependencies": {
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "elm/json": "1.0.0 <= v < 2.0.0"
+    },
+    "test-dependencies": {
+        "elm-explorations/test": "1.1.0 <= v < 2.0.0"
+    }
+}

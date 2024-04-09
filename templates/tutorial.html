@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try out Elm: A delightful language with friendly error messages, great performance, small assets, and no runtime exceptions.">
+  <link rel="stylesheet" rel="preload" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Courier+Prime&display=swap">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+  <link rel="stylesheet" href="/css/page.css">
+</head>
+
+<body>
+
+<main id="main"></main>
+<script src="/js/editor-codemirror.js"></script>
+<script src="/js/editor-custom-elements.js"></script>
+<script src="/elm/tutorial.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    main = Elm.Page.Tutorial.init({
+      node: document.getElementById('main'),
+      flags: { windowWidth: window.innerWidth, tutorial: {{& tutorial}}, code: {{& code}}, rand: {{& rand}} }
+    });
+    
+    main.ports.setTutorialFrame.subscribe(function(html) {
+      frame = document.getElementById('tutorial-frame');
+      if (frame != null) {
+          frame.srcdoc = html;
+          frame.contentWindow.focus();
+      }
+    });    
+
+  });
+</script>
+
+</body>
+
+</html>
+

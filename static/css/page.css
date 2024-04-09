@@ -1,0 +1,255 @@
+/* Style the form - display items horizontally */
+.login-header form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.login-header #login {
+    float: left;
+}
+.login-header #signup {
+    margin-left:auto;
+    float: right;
+}
+
+/* Add some margins for each label */
+.login-header form label {
+  color: white;
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+}
+
+.login-header form label img {
+    height: 40px;
+    margin: -10px 5px;
+    vertical-align: middle;
+}
+
+/* Style the input fields */
+.login-header form input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Style the div fields */
+.login-header form div {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 10px 10px;
+}
+
+/* Style the div fields */
+.login-header div {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 10px 10px;
+}
+
+/* Style the submit button */
+.login-button {
+  padding: 10px 20px;
+  background-color: grey;
+  border: 1px solid #ddd;
+  color: white;
+  vertical-align: middle;
+}
+
+.login-button:hover {
+  background-color: darkgrey;
+}
+
+.login-header {
+    background-color: black;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: white;
+    display:flex;
+}
+
+.page-content {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border: 0px;
+}
+
+.page-content.large {
+    /*background-color: black;
+    color: white;
+    width: 100%;
+    border: 0px;*/
+    position: absolute;
+    height: calc(100% - 98px);
+}
+.page-content.scroll {
+    /*background-color: black;
+    color: white;
+    width: 100%;
+    border: 0px;*/
+    position: absolute;
+    min-height: calc(100% - 98px); 
+}
+
+.avatar-button {
+    border-radius: 100%;
+    margin: 4px 4px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    
+}
+#choose-avatar {
+    align-items: center;
+    display: flex;
+}
+#bot-editor {
+    border: 0px;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 145px);
+}
+
+#game-frame {
+    border: 0px;
+    float:right;
+    width:75%;
+    height:100%;
+}
+#match-frame {
+    border: 0px;
+    float:right;
+    width:75%;
+    height:100%;
+}
+#match-frame.large {
+    
+}
+#match-frame.scroll {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-button {
+    font-size: 1em;
+    border-radius: 5px;
+    margin: 20px 20px;
+    width:50%;
+    border:10px;
+    border-color: #b85904;
+    background: #b85904;
+    color: white;
+}
+.match-button:hover {
+    background: #ca824f;
+}
+.match-button:active {
+    background: #d7a07b;
+}
+.match-button #date {
+    color: #5f2f05;
+}
+.match-button #champion {
+    width: 40px;
+    margin: 0px 0px -45px 0px;
+}
+.match-button #match {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#play-bar {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    float:left;
+    width:25%;
+    height:100%;
+}
+
+* {
+    --mdc-theme-primary: #b85904;
+}
+
+.login-header form .mdc-text-field {
+    height:40px;
+    width:200px;
+    align-items: center;
+    margin: 0px 1px;
+}
+
+#play-bar .mdc-touch-target-wrapper {
+    width:80%;
+    display:inline-flex;
+}
+#play-bar .mdc-touch-target-wrapper mdc-button {
+    width:100%;
+}
+
+.champion-card {
+    margin:20px;
+    padding:10px;
+    width:90%;
+    border-color: #3a3a3a;
+    background: #3a3a3a;
+}
+.champion-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.champion-card-media {
+    width:100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.champion-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.champion-name {
+    margin-left: 20px;
+    overflow-wrap: break-word;
+    inline-size: 60%;
+}
+.match-name {
+    width:30%;
+    overflow-wrap: break-word;
+}
+
+.tutorial #double-pane #left-side {
+    display:flex;
+    flex-direction: column;
+}
+
+.tutorial-text {
+    width:100%;
+    height:60%;
+}
+
+#tutorial-editor {
+  margin: 0;
+  width: 100%;
+  height: calc((40%) - (30px));
+  background-color: white;
+  vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+  flex-grow: 1
+}
+#tutorial-frame {
+    border: 0px;
+    float:right;
+    width:100%;
+    height:100%;
+}

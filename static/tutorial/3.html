@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/editor-styles.css"/>
+  <style>
+    html, head, body { padding: 0; margin: 0; line-height: 1.5; }
+    a { color: #1293D8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body style="background: var(--dark-theme-black);">
+
+<div class="theme-dark" style="width:100%; height:100%; ">
+  <div style="border-top:4px solid #1293D8; min-width: 360px; font-family:'IBM Plex Sans',sans-serif; padding:0 2em 1em; margin:2em;">
+    <p style="border-top:1em"></p>
+    <h1 style="font-weight:normal">Moving to a free position</h1>
+    <p>Consider the board on the right, where your bot is next to a soon-to-explode bomb. But now we can't use the concrete positions... each time you refresh this page the bot and bomb will be placed in different positions on the board.</p>
+    <p>How can the bot always escape the bomb?</p>
+    <ul>
+        <li>We have four directions that we can consider: above, below, leftwards and rightwards.</li>
+        <li>It is not as simple as choosing one of them randomly, because we cannot move into a wall and the bot will die if it moves into the bomb.</li>
+        <li>We can define a <code>isFreePos</code> function which receives a position and tests precisely if it is free (not a wall nor a bomb). This function is also available in the bot interface.</li>
+        <li>Our bot then moves to the first free position: up, down, left or right in order.</li>
+    </ul>
+    
+    <p>Try the code below!</p>
+    <p style="border-bottom:1em"></p>
+    
+  </div>
+</div>
+
+</body>
+</html>

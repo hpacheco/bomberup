@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>body { padding: 0; margin: 0; display: none; }</style>
+</head>
+
+<body>
+    <script>
+        var errors = {{& errors}};
+        window.parent.postMessage(JSON.stringify(errors), "*");
+    </script>
+  </body>
+
+</html>

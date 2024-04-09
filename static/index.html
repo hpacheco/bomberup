@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BomberUP</title>
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
+  <style>body { padding: 0; margin: 0; }</style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web-elm@9.1.0/dist/material-components-web-elm.min.css">
+  <link rel="stylesheet" href="css/page.css">
+  <script src="https://unpkg.com/material-components-web-elm@9.1.0/dist/material-components-web-elm.min.js"></script>
+</head>
+
+<body>
+    <div id="elm"></div>
+    
+    <script src="elm/main.js"></script>
+    <script>
+      var app = Elm.Main.init({
+        node: document.getElementById("elm")
+      });    
+        
+      app.ports.setValidity.subscribe( payload => {
+        //console.log("setting validity to ",payload.id,payload.validity);   
+        var node = document.getElementById(payload.id).getElementsByTagName('input')[0];
+        if (node != undefined) {
+          //console.log("set validity to ",payload.id,payload.validity);   
+          node.setCustomValidity(payload.validity); 
+          node.reportValidity();
+        }
+      });
+      
+      app.ports.setGameFrame.subscribe(function(html) {
+        frame = document.getElementById('game-frame');
+        if (frame != null) {
+            frame.srcdoc = html;
+            frame.contentWindow.focus();
+        }
+      });
+    </script>
+  </body>
+
+</html>
