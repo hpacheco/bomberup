@@ -10,4 +10,5 @@ WORKDIR /bomberup
 RUN cabal install bomberup
 ENV PATH="/root/.cabal/bin:$PATH"
 RUN apt install -yq rsync python3-pip python3.10-gdbm && pip install elm-doc
+RUN rm -rf /bomberup/static/docs
 CMD ["bomberup"]
